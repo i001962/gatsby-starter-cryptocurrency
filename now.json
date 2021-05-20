@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "name": "catalyst-coin-www",
+  "alias": [
+    "www.cryptocatalyst.net"
+  ],
+  "builds": [
+    {
+      "src": "/public/**",
+      "use": "@now/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "status": 404,
+      "dest": "/public/404"
+    }
+  ]
+}
